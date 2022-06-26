@@ -15,7 +15,7 @@ const topBar = ({styles, balance, category, title, isNumber}) => {
       <View style={styles.containerWrapperUp}>
         {isNumber ? (
           <View style={styles.boxTitle}>
-            <Text style={styles.title}>Hi, Nama</Text>
+            <Text style={styles.title}>Hi</Text>
             <Text style={styles.title}>Welcome back</Text>
           </View>
         ) : null}

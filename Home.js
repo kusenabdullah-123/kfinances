@@ -7,14 +7,7 @@ import BoxCard from './BoxCard';
 import ItemBudget from './ItemBudget';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useIsFocused} from '@react-navigation/native';
-import {
-  SafeAreaView,
-  Text,
-  View,
-  StatusBar,
-  ScrollView,
-  TouchableOpacity,
-} from 'react-native';
+import {SafeAreaView, Text, View, StatusBar, ScrollView} from 'react-native';
 const Home = ({navigation}) => {
   const isFocused = useIsFocused();
   const [money, setMoney] = useState({balance: 0, income: 0, expenditure: 0});
@@ -100,7 +93,7 @@ const Home = ({navigation}) => {
         </View>
 
         <View style={styles.boxBudget}>
-          <Text style={styles.titleBudget}>Budget</Text>
+          <Text style={styles.titleBudget}>History</Text>
           <ScrollView style={styles.boxScrol}>
             {budget?.map((item, index) => {
               return (

@@ -7,7 +7,7 @@ import Income from './Income';
 import Expenditure from './expenditure';
 import ExpenditureInput from './ExpenditureInput';
 import IncomeInput from './incomeInput';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
+
 const Stack = createNativeStackNavigator();
 const App = props => {
   const [loaded, setLoaded] = useState(false);
@@ -29,7 +29,7 @@ const App = props => {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home">
-            {props => <Home {...props} extraData={['1', 2]} />}
+            {props => <Home {...props} />}
           </Stack.Screen>
           <Stack.Screen name="Income" component={Income} />
           <Stack.Screen name="IncomeInput" component={IncomeInput} />
