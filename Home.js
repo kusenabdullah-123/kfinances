@@ -19,7 +19,7 @@ const Home = ({navigation}) => {
   const isFocused = useIsFocused();
   const [money, setMoney] = useState({balance: 0, income: 0, expenditure: 0});
   const [budget, setBudget] = useState([]);
-  // const [isLoading, setLoading] = useState(true);
+  const [isDeleted, setDeleted] = useState(false);
   const actions = [
     {
       text: 'Income',
@@ -56,6 +56,17 @@ const Home = ({navigation}) => {
     };
     getData();
   }, [isFocused]);
+  useEffect(() => {
+    const getBudget = async () => {
+      if (isDeleted) {
+        const dataMoney = await AsyncStorage.getItem('money');
+        setBudget([...JSON.parse(dataMoney).data].slice(-2));
+        setMoney(JSON.parse(dataMoney));
+        setDeleted(false);
+      }
+    };
+    getBudget();
+  }, [isDeleted]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -90,12 +101,6 @@ const Home = ({navigation}) => {
 
         <View style={styles.boxBudget}>
           <Text style={styles.titleBudget}>Budget</Text>
-          <TouchableOpacity
-            onPress={async () => {
-              await AsyncStorage.clear();
-            }}>
-            <Text style={styles.titleBudget}>Clear</Text>
-          </TouchableOpacity>
           <ScrollView style={styles.boxScrol}>
             {budget?.map((item, index) => {
               return (
@@ -107,6 +112,8 @@ const Home = ({navigation}) => {
                   attrNumber={item.type === 'expenditure' ? ' - ' : ' + '}
                   value={item.amount}
                   _id={item.id}
+                  deleted={isDeleted}
+                  setDeleted={setDeleted}
                 />
               );
             })}
