@@ -112,6 +112,22 @@ const styles = StyleSheet.create({
     height: hp('43%'),
     padding: wp('3%'),
   },
+  boxChart: {
+    height: hp('80%'),
+    padding: wp('2%'),
+  },
+  Chart: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  containerTextChart: {
+    flex: 1,
+    height: hp('20%'),
+  },
+  textChart: {
+    color: 'black',
+    fontSize: hp('3%'),
+  },
   boxScroolItem: {
     height: hp('11%'),
     padding: wp('3%'),

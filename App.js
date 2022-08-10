@@ -5,6 +5,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MainScreen from './MainScreen/mainScreen';
 import HistoryScreen from './HistoryScreen/HistoryScreen';
+import ChartScreen from './ChartScreen/ChartScreen';
 
 const Tab = createBottomTabNavigator();
 const App = props => {
@@ -56,21 +57,21 @@ const App = props => {
               ),
             }}
           />
-          {/* 
           <Tab.Screen
-            name="Profile"
-            component={Profile}
+            name="Chart"
+            component={ChartScreen}
             options={{
-              tabBarLabel: 'Profile',
+              headerShown: false,
+              tabBarLabel: 'Chart',
               tabBarIcon: ({color, size}) => (
                 <MaterialCommunityIcons
-                  name="account"
+                  name="chart-arc"
                   color={color}
                   size={size}
                 />
               ),
             }}
-          /> */}
+          />
         </Tab.Navigator>
       </NavigationContainer>
     </AnimatedSplash>

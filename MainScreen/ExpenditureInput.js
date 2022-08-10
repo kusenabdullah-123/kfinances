@@ -55,7 +55,21 @@ const ExpenditureInput = ({route, navigation}) => {
             value={name}
           />
           <Text style={styles.financeBalance}>Date</Text>
-          <DatePicker onSelectedChange={date => setSelectedDate(date)} />
+          <DatePicker
+            options={{
+              backgroundColor: '#ffffff',
+              textHeaderColor: '#000000',
+              textDefaultColor: '#000000',
+
+              mainColor: '#0C6DC7',
+              textSecondaryColor: '#000000',
+              borderColor: '#000000',
+            }}
+            mode="calendar"
+            minuteInterval={30}
+            style={{borderRadius: 10}}
+            onSelectedChange={date => setSelectedDate(date)}
+          />
           <Text style={styles.financeBalance}>Amount</Text>
           <TextInput
             style={styles.inputs}
