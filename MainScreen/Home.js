@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {FloatingAction} from 'react-native-floating-action';
-import styles from './styles';
-import TopBar from './TopBar';
-import BoxCard from './BoxCard';
-import ItemBudget from './ItemBudget';
+import styles from '../styles';
+import TopBar from '../component/TopBar';
+import BoxCard from '../component/BoxCard';
+import ItemBudget from '../component/ItemBudget';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useIsFocused} from '@react-navigation/native';
 import {SafeAreaView, Text, View, StatusBar, ScrollView} from 'react-native';

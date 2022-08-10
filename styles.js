@@ -6,7 +6,6 @@ import {
 const styles = StyleSheet.create({
   topBar: {},
   shadowProp: {
-    // width: '80%',
     shadowColor: '#000000',
     shadowOffset: {width: 1, height: 3},
     shadowOpacity: 0.9,
@@ -19,7 +18,7 @@ const styles = StyleSheet.create({
   wrapperUp: {
     paddingTop: hp('1%'),
     height: hp('32%'),
-    // borderWidth: 2,
+
     width: wp('100%'),
     backgroundColor: '#0000ff',
   },
@@ -46,6 +45,15 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: wp('3%'),
     marginTop: -hp('2.5%'),
+    backgroundColor: '#ffffff',
+    borderTopRightRadius: wp('6%'),
+    borderTopStartRadius: wp('6%'),
+  },
+  financeBoxForm: {
+    flex: 1,
+
+    padding: wp('3%'),
+    marginTop: -hp('12%'),
     backgroundColor: '#ffffff',
     borderTopRightRadius: wp('6%'),
     borderTopStartRadius: wp('6%'),

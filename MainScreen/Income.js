@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
-import TopBar from './TopBar';
-import styles from './styles';
+import TopBar from '../component/TopBar';
+import styles from '../styles';
 import {
   SafeAreaView,
   Text,

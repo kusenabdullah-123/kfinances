@@ -1,14 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import AnimatedSplash from 'react-native-animated-splash-screen';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Home from './Home';
-import Income from './Income';
-import Expenditure from './expenditure';
-import ExpenditureInput from './ExpenditureInput';
-import IncomeInput from './incomeInput';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MainScreen from './MainScreen/mainScreen';
+import HistoryScreen from './HistoryScreen/HistoryScreen';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 const App = props => {
   const [loaded, setLoaded] = useState(false);
   const timer = setTimeout(() => setLoaded(true), 3000);
@@ -27,15 +25,53 @@ const App = props => {
       logoHeight={150}
       logoWidth={150}>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: false}}>
-          <Stack.Screen name="Home">
-            {props => <Home {...props} />}
-          </Stack.Screen>
-          <Stack.Screen name="Income" component={Income} />
-          <Stack.Screen name="IncomeInput" component={IncomeInput} />
-          <Stack.Screen name="Expenditure" component={Expenditure} />
-          <Stack.Screen name="ExpenditureInput" component={ExpenditureInput} />
-        </Stack.Navigator>
+        <Tab.Navigator
+          initialRouteName="MainScreen"
+          screenOptions={{
+            tabBarActiveTintColor: '#0C6DC7',
+          }}>
+          <Tab.Screen
+            name="MainScreen"
+            component={MainScreen}
+            options={{
+              headerShown: false,
+              tabBarLabel: 'Home',
+              tabBarIcon: ({color, size}) => (
+                <MaterialCommunityIcons name="home" color={color} size={size} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="History"
+            component={HistoryScreen}
+            options={{
+              tabBarLabel: 'History',
+              headerShown: false,
+              tabBarIcon: ({color, size}) => (
+                <MaterialCommunityIcons
+                  name="database"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }}
+          />
+          {/* 
+          <Tab.Screen
+            name="Profile"
+            component={Profile}
+            options={{
+              tabBarLabel: 'Profile',
+              tabBarIcon: ({color, size}) => (
+                <MaterialCommunityIcons
+                  name="account"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }}
+          /> */}
+        </Tab.Navigator>
       </NavigationContainer>
     </AnimatedSplash>
   );
