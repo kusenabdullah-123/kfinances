@@ -6,7 +6,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import MainScreen from './MainScreen/mainScreen';
 import HistoryScreen from './HistoryScreen/HistoryScreen';
 import ChartScreen from './ChartScreen/ChartScreen';
-
 const Tab = createBottomTabNavigator();
 const App = props => {
   const [loaded, setLoaded] = useState(false);

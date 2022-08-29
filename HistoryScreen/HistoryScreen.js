@@ -49,9 +49,9 @@ const HistoryScreen = () => {
       {/* end topBar */}
 
       <View style={styles.financeBoxForm}>
-        <View style={styles.boxBudget}>
+        <View style={styles.boxBudgetHistory}>
           <Text style={styles.titleBudget}>History</Text>
-          <ScrollView style={styles.boxScrol}>
+          <ScrollView style={styles.boxScrolHistory}>
             {money?.map((item, index) => {
               return (
                 <ItemBudget

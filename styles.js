@@ -108,8 +108,15 @@ const styles = StyleSheet.create({
     fontSize: hp('3.5%'),
   },
   boxScrol: {height: hp('25%'), padding: wp('3%')},
+  boxScrolHistory: {
+    padding: wp('3%'),
+  },
   boxBudget: {
     height: hp('43%'),
+    padding: wp('3%'),
+  },
+  boxBudgetHistory: {
+    height: hp('69%'),
     padding: wp('3%'),
   },
   boxChart: {
